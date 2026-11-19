@@ -4,8 +4,11 @@
 # Then commit results/ to publish them on GitHub.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-USER_NAME=$(python3 -c "import json,os;print(json.load(open(os.path.expanduser('~/.kaggle/kaggle.json')))['username'])")
-KERNEL="$USER_NAME/waterbirds-phase1-erm"
+# Kaggle username: $KAGGLE_USERNAME, else ~/.kaggle/kaggle.json (legacy tokens).
+# New KGAT_ tokens live in ~/.kaggle/access_token and don't include the username.
+USER_NAME="${KAGGLE_USERNAME:-$(python3 -c "import json,os;print(json.load(open(os.path.expanduser('~/.kaggle/kaggle.json')))['username'])" 2>/dev/null || true)}"
+[ -n "$USER_NAME" ] || { echo "Set KAGGLE_USERNAME=<your kaggle username>"; exit 1; }
+KERNEL="$USER_NAME/waterbirds-phase-1-erm"
 kaggle kernels status "$KERNEL"
 rm -rf kaggle_output && mkdir -p kaggle_output
 kaggle kernels output "$KERNEL" -p kaggle_output
