@@ -7,6 +7,14 @@ Open `notebooks/phase1_kaggle.ipynb`, set GPU, and either attach Waterbirds as a
 input dataset or turn Internet on (the notebook downloads it). It verifies the
 data, trains 3 seeds and summarizes test results.
 
+## Kaggle (automated)
+```
+notebooks/push_to_kaggle.sh      # upload + start a private GPU run (needs ~/.kaggle/kaggle.json)
+notebooks/fetch_from_kaggle.sh   # when finished: copy results/ and checkpoints/ back
+```
+`results/` (CSVs, plots) is committed to the repo. Checkpoints (~45 MB each) are
+not; attach them to a GitHub Release if you want to share them.
+
 ## Data
 ```
 # download (~492 MB) from the Hugging Face mirror grodino/waterbirds (a 1:1
