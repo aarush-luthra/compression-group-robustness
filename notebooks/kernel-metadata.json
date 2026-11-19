@@ -1,0 +1,13 @@
+{
+  "id": "KAGGLE_USERNAME/waterbirds-phase1-erm",
+  "title": "Waterbirds Phase 1 ERM",
+  "code_file": "phase1_kaggle.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": []
+}
