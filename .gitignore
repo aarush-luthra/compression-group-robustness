@@ -1,0 +1,13 @@
+# dataset and model weights (large; download with src/prepare_data.py)
+data/
+checkpoints/
+*.pt
+*.parquet
+
+# smoke-test outputs
+results/smoke.csv
+
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store

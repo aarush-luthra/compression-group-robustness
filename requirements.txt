@@ -1,0 +1,10 @@
+torch>=2.2
+torchvision>=0.17
+numpy
+pandas
+pillow
+scikit-learn
+matplotlib
+torch-pruning   # needed from Phase 2
+pytest
+pyarrow>=14   # HF mirror download
